@@ -16,7 +16,7 @@ async function submitWaitlist(event) {
     const email = document.getElementById('waitlistEmail').value;
 
     try {
-        const response = await fetch('/api/waitlist', {
+        const response = await fetch('https://jsspy.onrender.com/api/waitlist', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
