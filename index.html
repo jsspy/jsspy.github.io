@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JSSpy - Monitor changes in your JavaScript files with automatic versioning and diff viewing. Track updates in real-time.">
+    <meta name="keywords" content="JavaScript tracker, file monitoring, version control, diff viewer, real-time updates, bug bounty, security research">
+    <meta name="author" content="JSSpy">
+    <meta property="og:title" content="JSSpy - Monitor JavaScript File Changes">
+    <meta property="og:description" content="Track changes in your JavaScript files with automatic versioning and diff viewing. Get real-time updates.">
+    <meta property="og:type" content="website">
+    <title>JSSpy - Monitor JavaScript File Changes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+    <header class="fixed top-0 right-0 left-0 bg-gray-900/80 backdrop-blur-sm p-4 flex justify-between items-center z-50 border-b border-gray-800">
+        <div class="flex items-center">
+            <img src="assets/logo-wide.png" alt="JSSpy Logo" class="h-12 w-auto mr-3">
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-32 px-4 pb-20">
+            <div class="max-w-7xl mx-auto text-center">
+                <h1 class="text-6xl font-bold mb-6 bg-gradient-to-r from-green-500 to-blue-500 text-transparent bg-clip-text">
+                    Track JavaScript Changes
+                </h1>
+                <p class="text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
+                    The best <mark class="bg-blue-500/20 text-blue-400 px-1 rounded">bug bounty</mark> tip is to hunt the newest features. JSSpy watches your target's JavaScript and alerts you when something changes —
+                    like new <mark class="bg-blue-500/20 text-blue-400 px-1 rounded">endpoints</mark>, <mark class="bg-blue-500/20 text-blue-400 px-1 rounded">APIs</mark>, <mark class="bg-blue-500/20 text-blue-400 px-1 rounded">leaked keys</mark>, <mark class="bg-blue-500/20 text-blue-400 px-1 rounded">parameters</mark>... Find fresh attack surface before others.
+                </p>
+                <div class="flex gap-4 justify-center">
+                    <button onclick="openWaitlistPopup()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg">
+                        Join waitlist
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Features Section -->
+        <section id="features" class="py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 p-8 border border-gray-800">
+                        <div class="text-3xl text-green-500 mb-4"><i class="fas fa-search"></i></div>
+                        <h3 class="text-xl font-semibold mb-4">24/7 JavaScript Monitoring</h3>
+                        <p class="text-gray-300">Track changes in JavaScript files.</p>
+                    </div>
+
+                    <div class="bg-gray-900 p-8 border border-gray-800">
+                        <div class="text-3xl text-green-500 mb-4">
+                            <img src="assets/burp.png" alt="Burp Suite Icon" class="w-8 h-8 inline-block">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Burp Suite Extension</h3>
+                        <p class="text-gray-300">Our Burp extension automatically adds JavaScript files to your account.</p>
+                    </div>
+
+                    <div class="bg-gray-900 p-8 border border-gray-800">
+                        <div class="text-3xl text-green-500 mb-4"><i class="fas fa-code-branch"></i></div>
+                        <h3 class="text-xl font-semibold mb-4">Diff Analysis</h3>
+                        <p class="text-gray-300">Compare versions with our powerful diff viewer. Quickly identify code changes.</p>
+                    </div>
+
+                    <div class="bg-gray-900 p-8 border border-gray-800">
+                        <div class="text-3xl text-green-500 mb-4"><i class="fas fa-code"></i></div>
+                        <h3 class="text-xl font-semibold mb-4">Regex Matching</h3>
+                        <p class="text-gray-300">Automatically detect new endpoints, leaked keys, APIs, parameters... using pattern matching.</p>
+                    </div>
+
+                    <div class="bg-gray-900 p-8 border border-gray-800">
+                        <div class="text-3xl text-green-500 mb-4"><i class="fas fa-bell"></i></div>
+                        <h3 class="text-xl font-semibold mb-4">Instant Alerts</h3>
+                        <p class="text-gray-300">Get notifications when changes are made. Stay ahead of other researchers and hunting on the latest features.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gray-900/50">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-6">Ready to Level Up Your Bug Hunting?</h2>
+                <p class="text-xl text-gray-300 mb-8">Join other successful bug hunters using JSSpy to find vulnerabilities faster.</p>
+                <button onclick="openWaitlistPopup()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg inline-block">
+                    Join waitlist
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Waitlist Popup -->
+    <div id="waitlistPopup" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 p-8 w-full max-w-sm mx-4 border border-gray-800">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-100">Join the Waitlist</h2>
+                <button onclick="closeWaitlistPopup()" class="text-gray-400 hover:text-gray-100">&times;</button>
+            </div>
+            <form onsubmit="submitWaitlist(event)" class="space-y-4">
+                <div>
+                    <input type="email" id="waitlistEmail" required placeholder="Enter your email" class="w-full p-3 bg-gray-800 text-gray-100 border border-gray-700 focus:border-green-600 focus:ring-1 focus:ring-green-600">
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-3">Join Waitlist</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col-reverse"></div>
+    <script src="index.js"></script>
+</body>
+</html>
